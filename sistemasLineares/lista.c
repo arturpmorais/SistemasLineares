@@ -67,16 +67,32 @@ char/*boolean*/ insira (Lista* lis, void* inf)
     novo ->info = inf;
     novo ->prox = atual->prox;
     atual->prox = novo;
+    return 1/*true*/;
 }
 
 char/*boolean*/ remova (Lista* lis, void* inf)
 {
     if (lis->inicio==NULL)
         return 0/*false*/; //Lista vazia!
+
     No* atual = lis->inicio;
+    int comp = (compareTo)(atual->info, inf);
 
+    for (;;)
+    {
+        if (atual==NULL || comp<0)
+            return 0; // o item nao esta na lista
 
-    return 0/*false*/; //Informacao nao encontrada!
+        if (comp>0)
+            atual=atual->prox;
+
+        if (comp==0)
+        {
+            //mata o item
+
+            return 1;
+        }
+    }
 }
 
 void imprima (Lista* lis)
