@@ -1,22 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-typedef
-    struct No
-    {
-        void*      info;
-        struct No* prox;
-    }
-    No;
-
-typedef
-    struct Lista
-    {
-        No*  inicio;
-        int  (*compareTo) (void*,void*);
-        void (*print)     (void*);
-    }
-    Lista;
+#include "lista.h"
 
 Lista/*<int>*/ lis;
 
@@ -145,16 +129,6 @@ void remocao ()
         fprintf (stderr,"Valor inexistente\n\n");
 }
 
-void impressao ()
-{
-    imprima (&lis);
-}
-
-void termino ()
-{
-    exit(0);
-}
-
 int main ()
 {
     static void (*funcao[4]) () =
@@ -174,4 +148,3 @@ int main ()
 
     return 0;
 }
-
