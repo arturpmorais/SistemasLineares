@@ -8,16 +8,7 @@ typedef
         struct No* prox;
     }
     No;
-
-typedef
-    struct Lista
-    {
-        No*  inicio;
-        int  (*compareTo) (void*,void*);
-        void (*print)     (void*);
-    }
-    Lista;
-
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 char insira (Lista* lis, void* inf);
 char remova (Lista* lis, void* inf);
 

@@ -2,6 +2,15 @@
 #include <stdlib.h>
 #include "lista.h"
 
+typedef
+    struct Lista
+    {
+        No*  inicio;
+        int  (*compareTo) (void*,void*);
+        void (*print)     (void*);
+    }
+    Lista;
+
 Lista/*<int>*/ lis;
 
 char/*boolean*/ insira (Lista* lis, void* inf)
